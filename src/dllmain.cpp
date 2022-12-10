@@ -11,7 +11,7 @@ DWORD WINAPI thread_func(void* hModule) {
     MH_Initialize();
     MH_CreateHook(
         reinterpret_cast<void*>(gd::base + 0x1907b0),
-        MenuLayer::init_hook,
+        reinterpret_cast<void*>(MenuLayer::init_hook),
         reinterpret_cast<void**>(&MenuLayer::init)
     );
 
